@@ -44,6 +44,9 @@ if ($num > 0) {
         
         echo "<div class='text-end'>";
         echo ' <a href="#" class="h4  btn-primary btn"><i class="bi bi-pencil-square"></i></a>';
+
+        echo "<a href='produtoDetail.php?id={$pro_id}' class='h4 mx-2 btn-success btn'><i class='bi bi-check-all'></i></a>";
+
         echo ' <a href="#" class="h4 btn btn-danger"><i class="bi bi-trash3"></i></a>';
         echo "</div>";
 

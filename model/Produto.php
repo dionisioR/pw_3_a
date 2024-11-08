@@ -20,5 +20,20 @@ class Produto{
         return $stmt;
     }
 
+    public function readOne(){
+        $query = "SELECT * FROM " . $this->table_name . " WHERE pro_id = ? limit 1";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $this->pro_id);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $this->pro_nome = $row['pro_nome'];
+        $this->pro_descricao = $row['pro_descricao'];
+        $this->pro_preco = $row['pro_preco'];
+        $this->pro_url = $row['pro_url'];
+    }
+
 
 }
